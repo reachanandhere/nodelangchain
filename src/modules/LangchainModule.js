@@ -7,7 +7,7 @@ dotenv.config();
 export default class LangChainModule {
   constructor() {
     this.model = new OpenAI({
-      temperature: 0.5,
+      temperature: 0.7,
       modelName: "gpt-3.5-turbo",
     });
   }
@@ -22,7 +22,7 @@ export default class LangChainModule {
   }
 
   async promptTemplate(prompt) {
-    const firstTemplate = "What would be a good shop name for a business that seels {product}?";
+    const firstTemplate = "What would be a good shop name for a business that seels {product}? Give me a few options.";
 
     const promptTemplate = new PromptTemplate({
         template: firstTemplate,
